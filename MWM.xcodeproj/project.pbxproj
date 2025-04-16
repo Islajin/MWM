@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		E57888B32DAE7958009B7A97 /* MWM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MWM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E57888B32DAE7958009B7A97 /* MWM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MWM.app; path = "/Users/yeonjin/Desktop/Study/MWM/build/Debug-iphoneos/MWM.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,16 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				E57888B52DAE7958009B7A97 /* MWM */,
-				E57888B42DAE7958009B7A97 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		E57888B42DAE7958009B7A97 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E57888B32DAE7958009B7A97 /* MWM.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +86,7 @@
 			mainGroup = E57888AA2DAE7958009B7A97;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = E57888B42DAE7958009B7A97 /* Products */;
+			productRefGroup = E57888AA2DAE7958009B7A97;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
