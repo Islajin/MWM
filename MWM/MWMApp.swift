@@ -1,17 +1,13 @@
-//
-//  MWMApp.swift
-//  MWM
-//
-//  Created by yeonjin on 4/15/25.
-//
 
 import SwiftUI
+import SwiftData
 
 @main
 struct MWMApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView().modelContainer(for: User.self)
         }
     }
 }
+
