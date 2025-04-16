@@ -25,11 +25,30 @@ struct LoginView: View {
     
     var body: some View {
         NavigationStack {
-            VStack () {
+            ZStack {
+                Color.background
                 
-                TextField("아이디", text: $inputId)
-                
-                SecureField("비밀번호", text: $inputPassword)
+                VStack (spacing: 60) {
+                VStack() {
+                    Image("logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 80)
+                }
+   
+                VStack(spacing: 20) {
+                    TextField("아이디", text: $inputId)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(8)
+                    
+                    SecureField("비밀번호", text: $inputPassword)
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(8)
+                    
+                }.padding(.horizontal, 20)
+               
                 
                 Button ("로그인") {
                     if users.first(where: { $0.id == inputId && $0.password == inputPassword }) != nil {
@@ -39,12 +58,21 @@ struct LoginView: View {
                     
                 }.navigationDestination(isPresented: $loginSuccess){
                     HomeView()}
+                .font(.headline)
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.logingreen)
+                .cornerRadius(10)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 90)
                 
             }.onAppear {
                 if users.isEmpty {
                     insertDefaultUser()
                 }
             }
+        }
         }
         
     }
