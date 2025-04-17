@@ -6,8 +6,8 @@ import SwiftData
 struct MWMApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView().modelContainer(for: User.self)
-        }
+            ContentView()
+        }.modelContainer(for: User.self)
     }
 }
 
