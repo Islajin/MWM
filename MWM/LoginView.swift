@@ -20,22 +20,21 @@ struct LoginView: View {
     
     @State private var inputId: String = ""
     @State private var inputPassword: String = ""
-    @State private var loginSuccess: Bool = false
+    @Binding var loginSuccess : Bool
     
     
     var body: some View {
-        NavigationStack {
             ZStack {
                 Color.background
                 
                 VStack (spacing: 60) {
-                VStack() {
+                    VStack() {
                     Image("logo")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 80)
                 }
-   
+                    
                 VStack(spacing: 20) {
                     TextField("아이디", text: $inputId)
                         .padding()
@@ -56,8 +55,7 @@ struct LoginView: View {
                         print("로그인 성공")
                     } else {print("로그인 실패") }
                     
-                }.navigationDestination(isPresented: $loginSuccess){
-                    HomeView()}
+                }
                 .font(.headline)
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
@@ -73,7 +71,6 @@ struct LoginView: View {
                 }
             }
         }
-        }
         
     }
     
@@ -88,19 +85,8 @@ struct LoginView: View {
         for user in defaultUsers {
             modelContext.insert(user)
         }
-        
-        do {
-            try modelContext.save()
-        }
-        catch {
-            
-        }
     }
     
 }
 
-#Preview {
-    LoginView()
-}
-    
 
